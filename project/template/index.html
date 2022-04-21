@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 works">
+                <h1>About.</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h1 id="about" class="about">About.</h1>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="content">
+                    <img src="{% static 'images/69-eye-outline.gif' %}" alt="">
+                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                        the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum
+                        may be used as a placeholder before the final copy is available IN PUBLISHING AND GRAPHIC
+                        DESIGN, LOREM IPSUM IS A PLACEHOLDER TEXT COMMONLY USED TO DEMONSTRATE THE VISUAL FORM OF A
+                        DOCUMENT OR A TYPEFACE WITHOUT RELYING ON MEANINGFUL CONTENT. LOREM IPSUM MAY BE USED AS A
+                        PLACEHOLDER BEFORE THE FINAL COPY IS AVAILABLE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row services">
+            <h1>Services.</h1>
+            <p>My services.</p>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="srvice-div">
+                    <img src="{% static 'images/developer.gif' %}" alt="">
+                    <h2>
+                        WEB DEVELOPMENT
+                    </h2>
+                    <p>
+                        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                        the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum
+                        may be 
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="srvice-div">
+                    <img src="{% static 'images/des.gif' %}" alt="">
+                    <h2>
+                        WEB DESIGN
+                    </h2>
+                    <p>
+                        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                        the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum
+                        may be 
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="srvice-div">
+                    <img src="{% static 'images/pen.gif' %}" alt="">
+                    <h2>
+                        PENETRATION TEST
+                    </h2>
+                    <p>
+                        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                        the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum
+                        may be 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+          <div class="col-6 arrow">
+              
+          </div>
+          <div class="col-6">
+              
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row contact">
+            <h1 id="contact">Contact.</h1>
+            <p>Hire me.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row form">
+           <div class="col-12 col-md-6">
+            <h1>Hire me.</h1>
+           </div>
+           <div class="col-12 col-md-6">
+            <form  method="POST" action="">
+                {% csrf_token %}
+                <input name="name" type="text" required placeholder="Name.">
+                <input name="number" type="number" required placeholder="Contact No.">
+                <input name="email" type="email" required placeholder="Mail.">
+                <input class="button" type="submit" value="Submit." >
+               
+            </form>
+        </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

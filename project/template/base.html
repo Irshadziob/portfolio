@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z I O B</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <span id="circle" class="circle"></span>
+    {% include 'header.html' %}
+    {% include 'banner.html' %}
+    {% block content %}
+    {% endblock %}
+    {% include 'footer.html' %}
+
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+
+<!-- navigation menu  -->
+<script>
+    (function(){
+    
+    'use strict';
+    
+    
+    var menuIcon = document.querySelector('.menu-icon');
+    var menu = document.querySelector('.menu');
+    var body = document.body;
+    var bodyClass = 'menu-active';
+    var show = false;
+    var timeout = 300; // transition or animation duration
+    
+    
+    menuIcon.addEventListener('click', function() {
+        show = !show;
+        if (show) return showMenu();
+        return closeMenu();
+    }, false);
+    
+    
+    function showMenu() {
+        menu.style.display = 'flex';
+
+        setTimeout(function() {
+            body.classList.add(bodyClass);
+        }, 0);
+    }
+    
+    function closeMenu() {
+        body.classList.remove(bodyClass);
+
+        setTimeout(function() {
+            menu.style.display = 'none';
+        }, timeout);
+    }
+    
+    
+}());
+</script>
+
+<!-- ____________________________________________________________________________ -->
+<!-- CIRCLE HOVER -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    jQuery(document).ready(function() {
+
+var mouseX = 0, mouseY = 0;
+var xp = 0, yp = 0;
+ 
+$(document).mousemove(function(e){
+  mouseX = e.pageX - 30;
+  mouseY = e.pageY - 30; 
+});
+  
+setInterval(function(){
+  xp += ((mouseX - xp)/6);
+  yp += ((mouseY - yp)/6);
+  $("#circle").css({left: xp +'px', top: yp +'px'});
+}, 20);
+
+});
+</script>
+<!-- ______________________________________________________________________________ -->
+
+
+
+<!-- PARTICLES JS FILE -->
+<script src="{% static 'js/particles.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+
+<!-- ___________________________________________________________________________ -->
+
+<!-- ANIMATION NAME -->
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".auto-input", {
+        strings: ["Wordpress Ex","Django Devel","Ethical Hack"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true,
+    })
+</script>
+<!-- __________________________________________________________________________ -->
+
+ 
+</body>
+</html>
